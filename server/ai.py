@@ -1,4 +1,5 @@
 import pandas as pd
+import joblib
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
@@ -48,19 +49,10 @@ accuracy = accuracy_score(
 
 print("\n모델 정확도:")
 print(accuracy)
-# 임의의 VM 상태 예측 테스트
-test_data = pd.DataFrame(
-    [
-        {
-            "cpu": 95,
-            "memory": 60,
-            "disk": 23,
-            "network": 200000
-        }
-    ]
+
+joblib.dump(
+    model,
+    "model.pkl"
 )
-result = model.predict(test_data)
-if result[0] == 1:
-    print("예측 결과: 과부하 상태")
-else:
-    print("예측 결과: 정상 상태")
+
+print("모델 저장 완료")

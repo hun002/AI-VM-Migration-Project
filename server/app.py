@@ -1,11 +1,13 @@
 import csv 
 import os 
+import joblib
 from datetime import datetime
 from flask import Flask, request
 
 app = Flask(__name__)
 
 CSV_FILE = "data/vm_status.csv"
+model = joblib.load("model.pkl")
 vm_status = {}
 
 def save_csv(data):
@@ -25,7 +27,8 @@ def save_csv(data):
                     "memory",
                     "disk",
                     "network",
-                    "label"
+                    "label",
+                    "ai_prediction"
                 ]
             )
 
@@ -37,7 +40,8 @@ def save_csv(data):
                 data["memory"],
                 data["disk"],
                 data["network"],
-                data["label"]
+                data["label"],
+                data["ai_prediction"]
             ]
         )
 
@@ -46,8 +50,16 @@ def receive():
 
     data = request.json
 
-    print("받은 VM 데이터")
-    print(data)
+    prediction = model.predict(
+        [[
+            data["cpu"],
+            data["memory"],
+            data["disk"],
+            data["network"]
+        ]]
+    )
+
+    data["ai_prediction"] = int(prediction[0])
 
     vm_status[data["server"]] = data
 
