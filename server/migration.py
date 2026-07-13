@@ -91,8 +91,7 @@ def calculate_cost(overloaded_vm,target_vm):
 # 최적 Migration 서버 선택
 def select_best_target(
         overloaded_vm,
-        candidates,
-        vm_status
+        candidates
 ):
     if len(candidates) == 0: #후보 서버가 없으면 Migration 불가능
         print(

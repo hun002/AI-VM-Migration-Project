@@ -3,6 +3,7 @@ import os
 import joblib
 from datetime import datetime
 from flask import Flask, request
+from migration import migration_process
 
 app = Flask(__name__)
 
@@ -64,7 +65,8 @@ def receive():
     vm_status[data["server"]] = data
 
     save_csv(data)
-
+    migration_process(vm_status)
+    
     return {
         "status": "success"
     }
