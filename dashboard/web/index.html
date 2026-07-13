@@ -6,76 +6,18 @@
     <title>VM Migration Dashboard</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <header class="topbar">
-      <div class="brand">
-        <span class="logo">◆</span>
-        <div>
-          <h1>VM Migration Console</h1>
-          <p class="subtitle">Real-time infrastructure &amp; migration monitor</p>
-        </div>
-      </div>
-      <div class="status">
-        <span class="dot dot-live"></span>
-        <span id="clock">--:--:--</span>
-      </div>
-    </header>
+ <body>
 
-    <main class="grid">
-      <section class="panel panel-vm" id="section-vm">
-        <div class="panel-head">
-          <h2>VM 상태</h2>
-          <span class="tag">CPU · Memory · Disk · Network · AI Prediction</span>
-        </div>
-        <div class="vm-cards" id="vm-cards"></div>
-      </section>
+    <h1>VM Migration Dashboard</h1>
+    <div id="vm-cards"></div>
 
-      <section class="panel panel-migration" id="section-migration">
-        <div class="panel-head">
-          <h2>Migration 결과</h2>
-        </div>
-        <div class="migration-body" id="migration-result"></div>
-      </section>
+    <h2>Migration 결과</h2>
+      <div id="migration-result"></div>
+    <hr>
 
-      <section class="panel panel-graph" id="section-graph">
-        <div class="panel-head">
-          <h2>Dependency Graph</h2>
-          <span class="tag">graph render area</span>
-        </div>
-        <div class="graph-placeholder" id="dependency-graph">
-          <span>Dependency Graph 영역</span>
-        </div>
-      </section>
-
-      <section class="panel panel-cost" id="section-cost">
-        <div class="panel-head">
-          <h2>Candidate Server Cost</h2>
-        </div>
-        <div class="table-wrap">
-          <table class="cost-table">
-            <thead>
-              <tr>
-                <th>Candidate Server</th>
-                <th>vCPU</th>
-                <th>RAM</th>
-                <th>Region</th>
-                <th class="num">Cost / hr</th>
-              </tr>
-            </thead>
-            <tbody id="cost-table-body"></tbody>
-          </table>
-        </div>
-      </section>
-
-      <section class="panel panel-log" id="section-log">
-        <div class="panel-head">
-          <h2>실시간 로그</h2>
-          <span class="tag">recent migration records</span>
-        </div>
-        <ul class="log-list" id="log-list"></ul>
-      </section>
-    </main>
+    <h2>Dependency Graph</h2>
+    <img src="의존성 그래프.png"/>
 
     <script src="script.js"></script>
-  </body>
+ </body>
 </html>

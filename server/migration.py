@@ -1,5 +1,8 @@
-migration_result = {}
-
+migration_result = {
+    "source": "-",
+    "target": "-",
+    "migrate": False
+}
 # VM 간 애플리케이션 의존 관계를 나타내는 의존성 그래프
 # Edge의 값은 VM 간 통신량을 의미하는 가중치로 사용함.(실제 측정값X / 0~1 사이의 임의 값으로 설정)
 # 값이 클수록 두 VM 간의 의존성이 높다고 가정.
@@ -130,8 +133,11 @@ def migration_process(vm_status):
         vm_status                           #있다면 overloaded_vm에 저장
     )
 
-    # Migration이 필요한 서버가 없다면 그대로 종료
+    # Migration이 필요한 서버가 없다면 그대로 종료/migration_result 초기화
     if overloaded_vm is None:
+        migration_result["source"] = "-"
+        migration_result["target"] = "-"
+        migration_result["migrate"] = False
         return
 
     candidates = select_candidate_servers( #두 매개변수를 select_candidate_servers로 보내
@@ -145,15 +151,20 @@ def migration_process(vm_status):
         overloaded_vm,
         candidates
     )
-
-    if target:
-
+    # Migration 대상 서버가 없다면 그대로 종료/migration_result 초기화
+    if target is None:
         migration_result["source"] = overloaded_vm
-        migration_result["target"] = target
-        migration_result["migrate"] = True
+        migration_result["target"] = "-"
+        migration_result["migrate"] = False
+        return
 
-        print(
-            f"{overloaded_vm} → {target} Migration 선택"
-        )
+
+    migration_result["source"] = overloaded_vm
+    migration_result["target"] = target
+    migration_result["migrate"] = True
+
+    print(
+        f"{overloaded_vm} → {target} Migration 선택"
+    )
 
         
