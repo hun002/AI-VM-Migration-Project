@@ -139,10 +139,9 @@ def migration_process(vm_status):
 
     print("후보 서버:",candidates) #후보 서버들 출력
 
-    target = select_best_target( #세 매개변수들을 모두 select_best_target로 보내 최적의 Migration 대상 서버를 선정
+    target = select_best_target( #두 매개변수들을 모두 select_best_target로 보내 최적의 Migration 대상 서버를 선정
         overloaded_vm,
-        candidates,
-        vm_status
+        candidates
     )
 
     if target:

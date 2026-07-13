@@ -4,10 +4,10 @@ import joblib
 from datetime import datetime
 from flask import Flask, request
 from migration import migration_process
-
+# 꼭 서버 경로에서 실행할 것.
 app = Flask(__name__)
 
-CSV_FILE = "data/vm_status.csv"
+CSV_FILE = "../data/vm_status.csv"
 model = joblib.load("model.pkl")
 vm_status = {}
 
@@ -66,7 +66,7 @@ def receive():
 
     save_csv(data)
     migration_process(vm_status)
-    
+
     return {
         "status": "success"
     }
