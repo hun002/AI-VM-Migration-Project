@@ -1,3 +1,5 @@
+migration_result = {}
+
 # VM 간 애플리케이션 의존 관계를 나타내는 의존성 그래프
 # Edge의 값은 VM 간 통신량을 의미하는 가중치로 사용함.(실제 측정값X / 0~1 사이의 임의 값으로 설정)
 # 값이 클수록 두 VM 간의 의존성이 높다고 가정.
@@ -145,6 +147,13 @@ def migration_process(vm_status):
     )
 
     if target:
+
+        migration_result["source"] = overloaded_vm
+        migration_result["target"] = target
+        migration_result["migrate"] = True
+
         print(
             f"{overloaded_vm} → {target} Migration 선택"
         )
+
+        

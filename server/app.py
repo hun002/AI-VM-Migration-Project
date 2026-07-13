@@ -3,7 +3,7 @@ import os
 import joblib
 from datetime import datetime
 from flask import Flask, request
-from migration import migration_process
+from migration import migration_process, migration_result
 # 꼭 서버 경로에서 실행할 것.
 app = Flask(__name__)
 
@@ -75,6 +75,11 @@ def receive():
 def get_vms():
 
     return vm_status
+
+@app.route("/migration")
+def get_migration():
+
+    return migration_result
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)
