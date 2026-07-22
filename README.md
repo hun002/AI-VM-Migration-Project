@@ -8,7 +8,9 @@
 
 🖥️개발 환경
 개발 플랫폼: Window11, Ubuntu
+
 개발 툴: Visual Studio Code, Oracle VirtualBox, Github Desktop
+
 웹 서버: 로컬
 
 👩🏻‍🔧기술 스택
