@@ -17,6 +17,7 @@ API: Flask
 기타 등: 깃허브, Python
 
 🦴시스템 전체 구조도
+
 <img width="451" height="537" alt="image" src="https://github.com/user-attachments/assets/3ff5b69d-f46b-4207-a551-9bb26a2be34a" />
 
 🔍주요 기능
