@@ -14,6 +14,7 @@
 👩🏻‍🔧기술 스택
 프론트엔드: HTML/CSS/JS
 API: Flask
+
 기타 등: 깃허브, Python
 
 🦴시스템 전체 구조도
