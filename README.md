@@ -22,9 +22,30 @@ API: Flask
 <img width="451" height="537" alt="image" src="https://github.com/user-attachments/assets/3ff5b69d-f46b-4207-a551-9bb26a2be34a" />
 
 🔍주요 기능
-가상 환경 데이터 수집: 각 VM의 시스템 상태를 수집하는 기능
-양방향 데이터 전송: Flask API를 통해 각 서버들이 데이터를 보내고 받는 기능
-과부하 예측: 임의로 랜덤 과부하를 발생시킨 데이터를 Csv로 저장하고 그 데이터를 기반으로 AI를 기계학습시켜 서버의 과부하를 예측하는 기능
-VM-Migration 판단: AI예측 결과를 바탕으로한 VM_Migration여부 판단 기능
-App-Aware 알고리즘을 통한 서버 선정: 각 서버의 자원 상태를 확인해 후보 서버를 선정후 그속에서 비용, 통신량등을 고려해 최종 서버를 선정하는 기능
-웹 대시보드: 각 VM의 상태를 나타내는 카드 및 Migration결과, 네트워크 의존성 그래프를 실시간으로 나타내는 페이지 표시 기능
+
+- 가상 환경 데이터 수집
+각 VM의 CPU, 메모리 등 시스템 상태 데이터 수집
+
+- 양방향 데이터 전송
+Flask API를 활용해 서버 간 상태 데이터 송수신
+
+- 과부하 예측
+수집 데이터를 기반으로 머신러닝 모델을 학습하고 서버 과부하 상태 예측
+
+- VM-Migration 판단
+예측 결과를 기반으로 Migration 필요 여부 결정
+
+- App-Aware 알고리즘 기반 대상 서버 선정
+서버 자원 상태와 네트워크 의존성을 고려하여 최적 Migration 대상 선정
+
+- 웹 대시보드
+VM 상태, Migration 결과, 네트워크 의존성 그래프 시각화
+
+🦿웹 대시보드 구현 영상
+
+https://github.com/user-attachments/assets/8899f8ea-0d3c-44de-b769-9a9e3d85e133
+
+
+
+* App-aware 알고리즘에 대한 학술자료 링크
+https://scholar.google.com/citations?view_op=view_citation&hl=ko&user=M7edePUAAAAJ&citation_for_view=M7edePUAAAAJ:KlAtU1dfN6UC
