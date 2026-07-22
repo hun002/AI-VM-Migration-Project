@@ -6,7 +6,7 @@
 ⌛개발 기간
 2026년 07월 12일 ~ 2026년 07월 13일(2일)<br>
 
-🖥️개발 환경
+🖥️개발 환경<br>
 개발 플랫폼: Windows 11, Ubuntu<br>
 개발 툴: Visual Studio Code, Oracle VirtualBox, Github Desktop<br>
 웹 서버: 로컬<br>
