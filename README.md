@@ -11,7 +11,7 @@
 개발 툴: Visual Studio Code, Oracle VirtualBox, Github Desktop<br>
 웹 서버: 로컬<br>
 
-👩🏻‍🔧기술 스택<br>
+👩‍💻기술 스택<br>
 언어: Python,HTML,CSS,JS<br>
 기타: Github<br>
 
