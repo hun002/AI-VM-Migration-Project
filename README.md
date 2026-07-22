@@ -3,23 +3,26 @@
 📁프로젝트 소개
 서버 상태 데이터를 기반으로 과부하를 예측하고, VM-Migration 여부 및 대상 서버를 선정하는 클라우드 환경 최적화 시스템을 구현한 프로젝트입니다. 또한 결과를 웹 대시보드로 시각화했습니다.
 
+
 ⌛개발 기간
 2026년 07월 12일 ~ 2026년 07월 13일(2일)
 
+
 🖥️개발 환경
 개발 플랫폼: Windows 11, Ubuntu
-
 개발 툴: Visual Studio Code, Oracle VirtualBox, Github Desktop
-
 웹 서버: 로컬
+
 
 👩🏻‍🔧기술 스택
 언어: Python,HTML,CSS,JS
 기타: Github
 
+
 🦴시스템 전체 구조도
 
 <img width="451" height="537" alt="image" src="https://github.com/user-attachments/assets/3ff5b69d-f46b-4207-a551-9bb26a2be34a" />
+
 
 🔍주요 기능
 
